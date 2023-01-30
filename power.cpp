@@ -1,22 +1,12 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int power (int a,int n)
-{
-    if(n==0) return 1;
-    else { if(n&1)
-    {
-        return a*power(a,n/2)*power(a,n/2);
-        
+static int my_power(int n,int p)
+{   
+    int num = n,pow = p;
+    
+    int temp=num;
+    for (int i = 1;i<pow;i++) {
+        temp = num*temp;
     }
-    else return power(a,n/2)*power(a,n/2);
-
-    }
-}
-int main()
-{
-    int a,n,p;
-    cin>>a>>n;
-    p=power(a,n);
-    cout<<p;
-    return 0;
+    return temp;
 }
